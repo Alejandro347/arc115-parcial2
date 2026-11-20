@@ -127,6 +127,7 @@
     let shuffle = store.get('shuffle', true);
     let withOpts = store.get('conOpciones', true);
     let deck = [], idx = 0, shown = false, optCtl = null;
+    let tiempo = store.get('tiempoTarjeta', 0);
 
     const wrap = document.createElement('div'); wrap.className = 'practice';
     const stats = document.createElement('div'); stats.className = 'pstats';
@@ -142,10 +143,25 @@
       '<option value="rep">Solo 🔁 repetidas</option><option value="warn">Solo ⚠️ dudosas</option><option value="star">Solo ⭐ últimos vistos</option>' +
       '<option value="dominadas">Ya dominadas</option></select>' +
       '<button class="btn" id="shuf" aria-pressed="' + shuffle + '">Aleatorio</button>' +
-      '<button class="btn" id="reset">Reiniciar progreso</button>';
+      '<button class="btn" id="reset">Reiniciar progreso</button>' +
+      '<select class="btn" id="tsel" aria-label="Contrarreloj"><option value="0">⏱ Sin tiempo</option>' +
+      '<option value="15">⏱ 15 s</option><option value="30">⏱ 30 s</option><option value="60">⏱ 60 s</option></select>';
+    const timerEl = document.createElement('div'); timerEl.className = 'timer'; timerEl.hidden = true;
     const cardEl = document.createElement('div'); cardEl.className = 'card';
     const actions = document.createElement('div'); actions.className = 'pactions';
-    wrap.append(modes, stats, bar, controls, cardEl, actions);
+    wrap.append(modes, stats, bar, controls, timerEl, cardEl, actions);
+
+    function setTime(t) { timerEl.textContent = '⏱ ' + QuizCore.formatTime(t); timerEl.classList.toggle('low', t <= 5); }
+    function stopTimer() { if (activeTimer) { activeTimer.stop(); activeTimer = null; } timerEl.hidden = true; }
+    function startTimer(c) {
+      stopTimer(); if (!tiempo) return;
+      timerEl.hidden = false; setTime(tiempo);
+      activeTimer = QuizCore.createCountdown(tiempo, setTime, () => { activeTimer = null; timeout(c); });
+    }
+    function timeout(c) {
+      if (withOpts) { if (optCtl && !optCtl.done) { optCtl.reveal(); answered(c, false, true); } }
+      else if (!shown) flip();
+    }
 
     function syncModes() {
       modes.querySelector('#mOpt').setAttribute('aria-pressed', withOpts);
@@ -173,7 +189,7 @@
         (withOpts ? '<span>' + withCount + ' con opciones</span><span class="kbd">1–4: elegir · →: siguiente</span>'
                   : '<span class="kbd">Espacio: voltear · 1: repasar · 2: lo sé · →: saltar</span>');
       bar.firstChild.style.width = (all.length ? (100 * n / all.length) : 0) + '%';
-      cardEl.innerHTML = ''; actions.innerHTML = ''; optCtl = null;
+      cardEl.innerHTML = ''; actions.innerHTML = ''; optCtl = null; stopTimer();
       if (!deck.length || idx >= deck.length) {
         cardEl.innerHTML = '<div class="empty">' + (deck.length ? '¡Terminaste este mazo! 🎉' : 'No hay tarjetas con este filtro.') +
           '<br><br><button class="btn primary" id="again">Volver a barajar</button></div>';
@@ -194,8 +210,10 @@
       } else {
         actions.append(mk('Mostrar respuesta', 'primary', flip), mk('Saltar →', '', next));
       }
+      if (withOpts || !shown) startTimer(c);
     }
     function answered(c, ok, timeout) {
+      stopTimer();
       if (ok) known.add(c.title); else { known.delete(c.title); deck.push(deck[idx]); }
       store.set(key, Array.from(known));
       showAnswer(cardEl, c, timeout ? '⏰ <b>Tiempo agotado.</b>' : (ok ? '✅ <b>¡Correcto!</b>' : '❌ <b>Incorrecto.</b>'));
@@ -212,6 +230,8 @@
     modes.querySelector('#mOpt').onclick = () => { withOpts = true; store.set('conOpciones', true); syncModes(); build(); };
     modes.querySelector('#mFlip').onclick = () => { withOpts = false; store.set('conOpciones', false); syncModes(); build(); };
     controls.querySelector('#fsel').value = filter;
+    controls.querySelector('#tsel').value = String(tiempo);
+    controls.querySelector('#tsel').onchange = e => { tiempo = +e.target.value; store.set('tiempoTarjeta', tiempo); draw(); };
     controls.querySelector('#fsel').onchange = e => { filter = e.target.value; store.set('filter:' + path, filter); build(); };
     controls.querySelector('#shuf').onclick = e => { shuffle = !shuffle; store.set('shuffle', shuffle); e.target.setAttribute('aria-pressed', shuffle); build(); };
     controls.querySelector('#reset').onclick = () => { if (confirm('¿Borrar tu progreso de este mazo?')) { known = new Set(); store.set(key, []); build(); } };
@@ -232,6 +252,7 @@
   }
 
   let keyHandler = null;
+  let activeTimer = null;
   document.addEventListener('keydown', e => { if (keyHandler) keyHandler(e); });
 
   // ---------- router ----------
@@ -239,6 +260,7 @@
     const path = currentPath();
     const mode = new URLSearchParams(location.hash.split('?')[1] || '').get('modo');
     sidebar.classList.remove('open'); setActive(path); keyHandler = null;
+    if (activeTimer) { activeTimer.stop(); activeTimer = null; }
     try {
       const md = await load(path);
       const div = render(md, path);
