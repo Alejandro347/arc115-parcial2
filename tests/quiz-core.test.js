@@ -90,3 +90,9 @@ test('createCountdown hace tick, termina una vez y se puede detener', () => {
   assert.deepEqual(t2, [4]);
   assert.equal(e2, 0);
 });
+
+test('countBlank cuenta huecos aunque el arreglo sea disperso', () => {
+  const a = new Array(10); a[0] = 1; a[3] = 0; a[5] = 2;
+  assert.equal(Q.countBlank(a, 10), 7);
+  assert.equal(Q.countBlank([], 3), 3);
+});

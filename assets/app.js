@@ -296,7 +296,10 @@
         cfg.decks = Array.from(form.querySelectorAll('input:checked')).map(i => i.value);
         cfg.count = +cnt.value; cfg.perQ = +tim.value; store.set('examCfg', cfg);
         go.disabled = true; go.textContent = 'Cargando…';
-        const cards = await loadCards(cfg.decks);
+        let cards;
+        try { cards = await loadCards(cfg.decks); }
+        catch (err) { go.disabled = false; go.textContent = 'Comenzar'; alert('No se pudieron cargar las preguntas: ' + err.message); return; }
+        if (!root.isConnected) return; // el usuario salió mientras cargaba
         start(QuizCore.buildExam(cards, cfg.count));
       };
       form.appendChild(el('div', '', '')).appendChild(go);
@@ -313,7 +316,7 @@
       const prog = el('span', 'exam-prog'); const clock = el('span', 'timer'); const send = el('button', 'btn primary', 'Entregar');
       barEl.append(prog, clock, send);
       root.append(el('h1', '', '📝 Examen'), barEl);
-      const upd = () => { prog.textContent = 'Respondidas ' + answers.filter(a => a !== undefined).length + '/' + questions.length; };
+      const upd = () => { prog.textContent = 'Respondidas ' + (questions.length - QuizCore.countBlank(answers, questions.length)) + '/' + questions.length; };
       questions.forEach((q, qi) => {
         const box = el('section', 'exam-q');
         box.appendChild(el('div', 'tag', (qi + 1) + ' · ' + q.section));
@@ -334,7 +337,7 @@
       let finished = false;
       const finish = (auto) => {
         if (finished) return;
-        const blank = answers.filter(a => a === undefined).length;
+        const blank = QuizCore.countBlank(answers, questions.length);
         if (!auto && blank && !confirm('Tienes ' + blank + ' preguntas sin responder. ¿Entregar?')) return;
         finished = true;
         if (activeTimer) { activeTimer.stop(); activeTimer = null; }
@@ -419,7 +422,8 @@
       document.title = h1now ? 'ARC115 · ' + h1now.textContent : 'ARC115 · Parcial 2';
       window.scrollTo({ top: 0 });
     } catch (err) {
-      content.innerHTML = '<h1>No se pudo cargar</h1><p class="muted">' + err.message + '</p>';
+      content.innerHTML = '<h1>No se pudo cargar</h1><p class="muted"></p>';
+      content.querySelector('p').textContent = err.message + '. Revisa la dirección o vuelve al inicio.';
     }
   }
   window.addEventListener('hashchange', route);

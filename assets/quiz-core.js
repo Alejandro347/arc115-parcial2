@@ -58,6 +58,12 @@
     return { correct, total, grade, details };
   }
 
+  function countBlank(answers, n) {
+    let k = 0;
+    for (let i = 0; i < n; i++) if (answers[i] === undefined || answers[i] === null) k++;
+    return k;
+  }
+
   function formatTime(seconds) {
     const s = Math.max(0, Math.floor(seconds));
     return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
@@ -75,5 +81,5 @@
     return { stop() { if (!done) { done = true; c.clearInterval(id); } } };
   }
 
-  return { parseOptions, shuffle, shuffleOptions, buildExam, gradeExam, formatTime, createCountdown };
+  return { countBlank, parseOptions, shuffle, shuffleOptions, buildExam, gradeExam, formatTime, createCountdown };
 });
