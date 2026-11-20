@@ -55,6 +55,13 @@ d) Estrategia de escritura
 Es un ejemplo de **localidad temporal**:
 a) While (bucles) b) Vectores c) Matrices d) Código secuencial
 
+<!--opciones
+*a) While (bucles)
+b) Vectores
+c) Matrices
+d) Código secuencial
+-->
+
 <details><summary>Respuesta</summary>
 
 **a) Bucles.** Localidad temporal = se vuelve a referenciar pronto lo que se usó recientemente (bucles, subrutinas, contadores).
@@ -64,6 +71,13 @@ Vectores, matrices y código secuencial son ejemplos de **localidad espacial**.
 ### Q3 🔁 (2025)
 Es un ejemplo de **localidad espacial**:
 a) Bucles b) Vectores c) Tablas d) Subrutinas
+
+<!--opciones
+a) Bucles
+*b) Vectores
+c) Contadores de un bucle
+d) Subrutinas
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -75,6 +89,13 @@ Bucles y subrutinas son localidad **temporal**.
 Uno de los sistemas operativos que permitía que el **programador trabajara directamente con los componentes internos (hardware)** era:
 a) SO monoprogramado b) SO interactivo c) SO de colas simples d) SO multiprogramado
 
+<!--opciones
+*a) SO monoprogramado
+b) SO interactivo
+c) SO de colas simples
+d) SO multiprogramado
+-->
+
 <details><summary>Respuesta</summary>
 
 **a) SO monoprogramado.** En los primeros sistemas (procesamiento en serie / monoprogramación) el programador interactuaba directamente con el hardware: cargaba el programa, operaba la consola, etc.
@@ -83,6 +104,13 @@ a) SO monoprogramado b) SO interactivo c) SO de colas simples d) SO multiprogram
 ### Q5 (2025)
 Capacidad de **acceder a una celda** de memoria:
 a) Posicionamiento b) Direccionamiento c) Dirección de celda d) a, b, c
+
+<!--opciones
+a) Posicionamiento
+*b) Direccionamiento
+c) Dirección de celda
+d) Todas las anteriores
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -93,6 +121,13 @@ a) Posicionamiento b) Direccionamiento c) Dirección de celda d) a, b, c
 Es el **tiempo que se tarda en realizar una operación de lectura o escritura**:
 a) Ciclo de memoria b) Acceso aleatorio c) Ciclo de reloj d) a, b
 
+<!--opciones
+a) Ciclo de memoria
+*b) Tiempo de acceso (acceso aleatorio)
+c) Ciclo de reloj
+d) Ciclo de memoria y acceso aleatorio
+-->
+
 <details><summary>Respuesta</summary>
 
 **b) Tiempo de acceso** (la opción viene redactada como «acceso aleatorio»). En memorias de acceso aleatorio, el tiempo de acceso (latencia) es el tiempo para hacer una lectura o escritura.
@@ -102,6 +137,13 @@ El **ciclo de memoria** = tiempo de acceso + tiempo adicional antes de poder ini
 ### Q7 (2025)
 Dentro del **método asociativo**, cada posición tiene su propio mecanismo de direccionamiento. ¿Qué dispositivos manejan mejor este método?
 a) Memoria principal b) Memoria caché c) Buffer del HD d) Memoria virtual
+
+<!--opciones
+a) Memoria principal
+*b) Memoria caché
+c) Buffer del disco duro
+d) Memoria virtual
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -129,6 +171,11 @@ Verdadero
 ### Q9 🔁 ⚠️ (2020, 2022)
 «La **unidad de tratamiento** y la **unidad de control** forman parte de la CPU.»
 
+<!--opciones
+*Verdadero
+Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **VERDADERO.** La CPU = **unidad de control** (PC, IR, decodificador, secuenciador) + **unidad de tratamiento/proceso** (ALU, registros, acumulador, indicadores).
@@ -138,6 +185,11 @@ Verdadero
 ### Q10 (2022)
 «Todos los **operandos** se almacenan específicamente en la memoria principal.»
 
+<!--opciones
+Verdadero
+*Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **FALSO.** Los operandos fuente y resultado pueden estar en: **memoria principal (o virtual)**, **registros de la CPU**, **dispositivos de E/S**, o en la propia instrucción (operando inmediato).
@@ -145,6 +197,11 @@ Verdadero
 
 ### Q11 ⚠️ (2022)
 «Al **incrementar la memoria caché y la asociatividad** dentro de ella, se incrementan los aciertos entre la CPU y la MCa.»
+
+<!--opciones
+*Verdadero
+Falso
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -156,6 +213,11 @@ Verdadero
 ### Q12 (2020)
 «Según el funcionamiento de la caché, la **estrategia de ubicación** determina dónde ubico un dato en la caché **y en la virtual**.»
 
+<!--opciones
+Verdadero
+*Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **FALSO.** La estrategia de ubicación (función de correspondencia) determina dónde se coloca un bloque de la **MP en la caché**. La memoria virtual no entra ahí.
@@ -163,6 +225,11 @@ Verdadero
 
 ### Q13 (2020)
 «Según el funcionamiento de la caché, la **estrategia de identificación** me determina cómo encontrar un dato en la caché.»
+
+<!--opciones
+*Verdadero
+Falso
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -172,6 +239,11 @@ Verdadero
 ### Q14 (2020)
 «El espacio de la memoria caché está dividido en **etiquetas**.»
 
+<!--opciones
+Verdadero
+*Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **FALSO.** Está dividido en **líneas (bloques)**. Cada línea tiene asociada una **etiqueta** que identifica qué bloque de la MP contiene.
@@ -180,6 +252,11 @@ Verdadero
 ### Q15 (2020)
 «El **tiempo de ciclo de memoria** es el tiempo de acceso más el tiempo que se requiere antes de iniciar un segundo acceso a memoria.»
 
+<!--opciones
+*Verdadero
+Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **VERDADERO.** Es la definición: tiempo de acceso + tiempo adicional (recuperación de señales, regeneración en memorias destructivas) antes de un nuevo acceso. Aplica a memorias de acceso aleatorio, no a la memoria virtual.
@@ -187,6 +264,11 @@ Verdadero
 
 ### Q16 (2020)
 «Una **interrupción** se produce únicamente cuando se genera un desbordamiento en cualquier proceso, momento en el cual se deja de ejecutar la instrucción actual.»
+
+<!--opciones
+Verdadero
+*Falso
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -197,6 +279,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 ### Q17 (2020)
 «El **contador de programa** se utiliza para conocer el número de líneas ejecutadas en un proceso.»
 
+<!--opciones
+Verdadero
+*Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **FALSO.** El PC contiene la **dirección de la siguiente instrucción** que se va a captar. Se incrementa después de cada captación o se modifica con saltos.
@@ -204,6 +291,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 
 ### Q18 🔁 (2019b, 2025)
 «La gestión de memoria basada en **particiones fijas** utiliza el método de **compactación** para resolver la fragmentación.»
+
+<!--opciones
+Verdadero
+*Falso
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -213,6 +305,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 ### Q19 🔁 (2019b, 2025)
 «Para los **sistemas multiprogramados** la planificación es la clave para su funcionamiento.»
 
+<!--opciones
+*Verdadero
+Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **VERDADERO.** Con varios procesos en memoria, el SO debe decidir cuál usa la CPU (planificación a corto, medio y largo plazo) para que esté ocupada mientras otros esperan E/S.
@@ -221,6 +318,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 ### Q20 🔁 (2019b, 2025)
 «El **principio de localidad** nos permite mejorar la **memoria caché**.»
 
+<!--opciones
+*Verdadero
+Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **VERDADERO.** Gracias a la localidad temporal y espacial, guardar en caché los bloques usados recientemente (y sus vecinos) da tasas de acierto altas. Es la base de toda la jerarquía de memoria.
@@ -228,6 +330,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 
 ### Q21 (2025)
 «El principio de localidad nos permite mejorar la **memoria principal**.»
+
+<!--opciones
+Verdadero
+*Falso
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -238,6 +345,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 ### Q22 🔁 (2019b, 2025)
 «El **espacio de direcciones lógicas** está limitado por el tamaño de la memoria física.»
 
+<!--opciones
+Verdadero
+*Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **FALSO.** El espacio lógico (virtual) depende del número de bits de la dirección lógica y puede ser **mayor** que la memoria física. Eso es justamente lo que permite la memoria virtual.
@@ -246,6 +358,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 ### Q23 🔁 (2019b, 2025)
 «Cuando incrementamos el **tamaño de los bloques** dentro de la MCa, nos ayuda a mejorar la tasa de fallos si nos acercamos a la MP.»
 
+<!--opciones
+*Verdadero
+Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **VERDADERO** (clave oficial). Bloques más grandes aprovechan la localidad espacial y bajan la tasa de fallos hasta cierto punto. Si el bloque crece demasiado, caben menos líneas y la tasa de fallos vuelve a subir, además de aumentar la penalización por fallo.
@@ -253,6 +370,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 
 ### Q24 🔁 ⚠️ (2019b, 2025) — corregida con la diapositiva
 «**Intel** organiza los bits dentro de la palabra por medio de **little-endian**.»
+
+<!--opciones
+*Verdadero
+Falso
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -263,6 +385,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 ### Q25 (2019b)
 «La **política de extracción** determina qué información se sustituye en la MCa.»
 
+<!--opciones
+Verdadero
+*Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **FALSO.** La política de extracción (*fetch*) determina **cuándo** y **qué** se trae a la caché (por demanda o anticipada/prebúsqueda). La que decide qué se sustituye es la **política de reemplazo**.
@@ -270,6 +397,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 
 ### Q26 ⚠️ (2025) — corregida con la diapositiva
 «Dentro de la **ubicación** de la memoria se determina que la memoria interna es igual a la memoria principal.»
+
+<!--opciones
+*Verdadero
+Falso
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -280,6 +412,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 ### Q27 (2025)
 «Cuando se diseña una memoria, el **precio** depende directamente de ella.»
 
+<!--opciones
+*Verdadero
+Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **VERDADERO.** Diseñar una memoria es un compromiso entre **capacidad, velocidad (tiempo de acceso) y costo**: más rapidez = mayor costo por bit; más capacidad = menor costo por bit pero más lenta. Por eso existe la jerarquía de memoria.
@@ -287,6 +424,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 
 ### Q28 (2025)
 «El **número máximo de celdas** direccionables directamente en memoria es independiente del número de bits que tiene cada celda.»
+
+<!--opciones
+*Verdadero
+Falso
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -296,6 +438,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 ### Q29 (2025, clave: V)
 «La **memoria externa** es accesible por la CPU por medio del contenido del buffer de los dispositivos de E/S.»
 
+<!--opciones
+*Verdadero
+Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **VERDADERO.** La CPU no accede directamente a la memoria externa: los datos pasan por los módulos/controladores de E/S (sus buffers) y luego a la MP.
@@ -303,6 +450,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 
 ### Q30 (2025, clave: V)
 «Las memorias externas transfieren datos y direcciones de manera paralela, a través de líneas diferentes.»
+
+<!--opciones
+*Verdadero
+Falso
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -312,6 +464,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 ### Q31 (2025, clave: V)
 «Las **cintas** son un buen ejemplo del método **secuencial** de acceso a los datos en memoria.»
 
+<!--opciones
+*Verdadero
+Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **VERDADERO.** En el acceso secuencial hay que pasar por los registros intermedios en orden lineal; el tiempo de acceso es muy variable.
@@ -319,6 +476,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 
 ### Q32 (2025, clave: V)
 «Para los métodos de acceso, los registros tienen asociada una **dirección única basada en su localización física**.»
+
+<!--opciones
+*Verdadero
+Falso
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -328,6 +490,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 ### Q33 (2019a)
 «La técnica de cachés de **escritura directa** presenta el inconveniente de inconsistencia si entre las escrituras en la caché y el disco se produce un fallo del sistema.»
 
+<!--opciones
+Verdadero
+*Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **FALSO.** En escritura directa (*write-through*) cada escritura en caché se hace también en la memoria inferior, así que **siempre son consistentes**. El riesgo de inconsistencia ante un fallo lo tiene la **escritura diferida/post-escritura** (*write-back*): los bloques modificados (bit *dirty*) solo se escriben al ser reemplazados.
@@ -335,6 +502,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 
 ### Q34 (2019a)
 «El **intercambio** es el hecho de que una tarea reemplace a otra en el estado de ejecución siguiendo el planificador a corto plazo.»
+
+<!--opciones
+Verdadero
+*Falso
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -344,6 +516,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 ### Q35 (2019a)
 «El controlador de E/S y la memoria intercambian datos directamente, sin intervención de la CPU; esto se da cuando se tiene una **interrupción**.»
 
+<!--opciones
+Verdadero
+*Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **FALSO.** Eso es **DMA (acceso directo a memoria)**. Con E/S por interrupciones la CPU sí interviene en cada transferencia. En DMA la CPU solo recibe una interrupción **al terminar** el bloque.
@@ -352,6 +529,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 ### Q36 (2019a)
 «El **grado de multiprogramación** corresponde al número máximo de programas que realizan las operaciones del sistema.»
 
+<!--opciones
+Verdadero
+*Falso
+-->
+
 <details><summary>Respuesta</summary>
 
 **FALSO.** El grado de multiprogramación es el **número de procesos cargados en memoria al mismo tiempo**, compitiendo por la CPU. Lo controla el planificador a largo plazo.
@@ -359,6 +541,11 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 
 ### Q37 (2019a)
 «La **memoria virtual** corresponde a un esquema de gestión de memoria que permite la ejecución de procesos parcialmente cargados en memoria.»
+
+<!--opciones
+*Verdadero
+Falso
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -371,6 +558,13 @@ Además, la CPU **termina la instrucción actual** y atiende la interrupción en
 
 ### Q38 🔁 (2019a, 2025, 2025)
 Explique el **ciclo de instrucción** (pasos, registros que intervienen) con un ejemplo.
+
+<!--opciones
+*a) MAR←PC, MBR←M[MAR], IR←MBR, PC←PC+1; luego decodificar y ejecutar
+b) IR←PC, MAR←IR, ejecutar y luego incrementar el MBR
+c) MBR←PC, IR←MAR, PC←PC−1; luego ejecutar
+d) Se ejecuta la instrucción y después se capta la dirección en el PC
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -391,6 +585,13 @@ Explique el **ciclo de instrucción** (pasos, registros que intervienen) con un 
 ### Q39 (2019a)
 ¿En qué consiste el **ciclo FETCH**?
 
+<!--opciones
+*a) Captar la instrucción: PC→MAR, memoria→MBR→IR e incrementar el PC
+b) Ejecutar la operación aritmética en la ALU
+c) Atender una interrupción pendiente guardando el PC
+d) Escribir el resultado de la instrucción en memoria
+-->
+
 <details><summary>Respuesta</summary>
 
 Es la **captación**: el PC tiene la dirección de la siguiente instrucción → se copia al MAR → se lee la memoria y la instrucción llega al MBR → se pasa al IR → se incrementa el PC. Después viene la decodificación y la ejecución.
@@ -398,6 +599,13 @@ Es la **captación**: el PC tiene la dirección de la siguiente instrucción →
 
 ### Q40 (2022)
 **Esquematice y explique todos los componentes de la CPU** y su funcionamiento.
+
+<!--opciones
+*a) Unidad de control, ALU (unidad de tratamiento), registros y bus interno
+b) Memoria principal, disco y controlador de E/S
+c) Solo la ALU y el acumulador
+d) Caché, memoria virtual y TLB
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -420,6 +628,13 @@ Es la **captación**: el PC tiene la dirección de la siguiente instrucción →
 ### Q41 (2022)
 Explique las **instrucciones** con las que trabaja el computador y la función de cada una.
 
+<!--opciones
+*a) Procesamiento de datos, almacenamiento, transferencia/E/S y control
+b) Lectura, escritura, borrado y compactación
+c) Solo aritméticas y lógicas
+d) Captación, decodificación, interrupción e indirección
+-->
+
 <details><summary>Respuesta</summary>
 
 1. **Procesamiento de datos:** aritméticas y lógicas (ADD, AND…), en la ALU.
@@ -431,6 +646,13 @@ Explique las **instrucciones** con las que trabaja el computador y la función d
 ### Q42 (2022)
 Explique los **componentes de la memoria interna** y el funcionamiento de cada uno.
 
+<!--opciones
+*a) Registros, memoria caché y memoria principal (RAM/ROM)
+b) Discos magnéticos, cintas y discos ópticos
+c) Solo la memoria RAM dinámica
+d) Memoria virtual, tabla de páginas y TLB
+-->
+
 <details><summary>Respuesta</summary>
 
 - **Registros del procesador:** los más rápidos y caros, de poca capacidad; guardan operandos y direcciones de uso inmediato.
@@ -440,6 +662,13 @@ Explique los **componentes de la memoria interna** y el funcionamiento de cada u
 
 ### Q43 🔁 (2019b, 2025)
 **Características principales de los sistemas/tipos de memoria** (explique al menos 3).
+
+<!--opciones
+*a) Ubicación, capacidad, unidad de transferencia, método de acceso, prestaciones
+b) Color, tamaño físico, marca y precio de venta
+c) Solo velocidad del reloj y número de núcleos
+d) Etiqueta, conjunto y palabra
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -456,6 +685,13 @@ Explique los **componentes de la memoria interna** y el funcionamiento de cada u
 ### Q44 (2025)
 Explique en qué consisten las **unidades de transferencia** y los **métodos de acceso** a memoria.
 
+<!--opciones
+*a) Transferencia: bits leídos/escritos a la vez (palabra o bloque); acceso: secuencial, directo, aleatorio, asociativo
+b) Transferencia: siempre 1 bit; acceso: solo aleatorio
+c) Transferencia: velocidad del bus; acceso: lectura o escritura
+d) Transferencia: tamaño de la caché; acceso: FIFO o LRU
+-->
+
 <details><summary>Respuesta</summary>
 
 **Unidad de transferencia:** en la MP es el número de bits que se leen o escriben a la vez (puede ser igual o mayor que la palabra). En memoria externa se transfieren **bloques**. Conceptos asociados: **palabra** (unidad natural de organización) y **unidad direccionable** (2^A = N).
@@ -470,6 +706,13 @@ Explique en qué consisten las **unidades de transferencia** y los **métodos de
 ### Q45 (2025)
 ¿Por qué las **celdas de memoria** tienen asociado un número de posición dentro de la memoria?
 
+<!--opciones
+*a) Para identificar cada celda de forma única (su dirección) y poder accederla
+b) Para saber cuántas veces se ha usado la celda
+c) Para ordenar los datos alfabéticamente
+d) Para indicar si la celda está en caché
+-->
+
 <details><summary>Respuesta</summary>
 
 Para que cada celda se pueda **identificar de forma única (dirección)** y la CPU pueda leerla o escribirla directamente, poniendo esa dirección en el bus de direcciones (MAR). Con *A* bits de dirección se distinguen 2^A celdas.
@@ -477,6 +720,13 @@ Para que cada celda se pueda **identificar de forma única (dirección)** y la C
 
 ### Q46 (2025)
 Explique la **organización de la MCa**.
+
+<!--opciones
+*a) Líneas con bloque + etiqueta + bits de control; correspondencia directa, asociativa o por conjuntos
+b) Un solo bloque gigante sin etiquetas
+c) Páginas y marcos con tabla de páginas
+d) Segmentos de tamaño variable con base y longitud
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -492,6 +742,13 @@ Explique la **organización de la MCa**.
 ### Q47 (2020)
 Explique el **comportamiento de la MCa** cuando el procesador hace distintas peticiones.
 
+<!--opciones
+*a) Compara etiqueta: si acierta entrega la palabra; si falla trae el bloque de MP (reemplazando si hace falta)
+b) Siempre lee de MP y luego copia a caché
+c) Si falla, se cancela la instrucción
+d) Envía todas las peticiones directamente al disco
+-->
+
 <details><summary>Respuesta</summary>
 
 1. La CPU genera la dirección.
@@ -505,6 +762,13 @@ Gracias a la localidad, la mayoría de las peticiones son aciertos.
 ### Q48 (2020)
 Explique el **comportamiento de la MV** cuando el procesador hace distintas peticiones.
 
+<!--opciones
+*a) TLB/tabla de páginas: si la página está, marco‖desplazamiento; si no, fallo de página y el SO la trae
+b) Toda dirección virtual va directo al disco
+c) La MV solo se usa cuando la caché está llena
+d) La CPU traduce comparando etiquetas de caché
+-->
+
 <details><summary>Respuesta</summary>
 
 1. La CPU genera una **dirección virtual** (nº de página + desplazamiento).
@@ -517,6 +781,13 @@ Así los procesos pueden ser más grandes que la MP y ejecutarse cargados solo e
 ### Q49 (2019a)
 Con el esquema de gestión de memoria por **particiones dinámicas**, ¿qué se produce?
 
+<!--opciones
+*a) Fragmentación externa; se resuelve con compactación
+b) Fragmentación interna; se resuelve con compactación
+c) Hiperpaginación
+d) Anomalía de Belady
+-->
+
 <details><summary>Respuesta</summary>
 
 **Fragmentación externa:** con el tiempo quedan huecos pequeños entre particiones que no sirven para ningún proceso. Se resuelve con **compactación** (mover los procesos para juntar los huecos) y se reduce con algoritmos de colocación (primer ajuste, mejor ajuste, siguiente ajuste).
@@ -525,6 +796,13 @@ Con el esquema de gestión de memoria por **particiones dinámicas**, ¿qué se 
 ### Q50 (2019a)
 ¿Cuál es la **unidad más pequeña direccionable** de la memoria?
 
+<!--opciones
+*a) La celda (normalmente el byte)
+b) El bloque
+c) La página
+d) El segmento
+-->
+
 <details><summary>Respuesta</summary>
 
 La **celda**: normalmente el **byte** (8 bits); en algunos sistemas, la palabra.
@@ -532,6 +810,13 @@ La **celda**: normalmente el **byte** (8 bits); en algunos sistemas, la palabra.
 
 ### Q51 (2019a)
 ¿Cuáles son las **ventajas del algoritmo de Booth**?
+
+<!--opciones
+*a) Multiplica en complemento a 2 sin corrección de signo y con menos sumas/restas
+b) Solo sirve para números positivos
+c) Evita usar el acumulador
+d) Divide más rápido que la restauración
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -543,6 +828,13 @@ La **celda**: normalmente el **byte** (8 bits); en algunos sistemas, la palabra.
 ### Q52 (2019a)
 ¿En qué consiste la **hiperpaginación** (*thrashing*)?
 
+<!--opciones
+*a) El sistema pasa más tiempo intercambiando páginas que ejecutando
+b) Usar páginas de tamaño variable
+c) Traer siempre la página i+1
+d) Compactar la memoria periódicamente
+-->
+
 <details><summary>Respuesta</summary>
 
 El sistema pasa **más tiempo intercambiando páginas entre la MP y el disco que ejecutando** procesos. Ocurre cuando hay demasiados procesos o pocos marcos por proceso: cada fallo de página saca una página que se necesitará pronto. Se evita con el modelo del conjunto de trabajo, menos multiprogramación o mejores algoritmos de reemplazo.
@@ -550,6 +842,13 @@ El sistema pasa **más tiempo intercambiando páginas entre la MP y el disco que
 
 ### Q53 (2019a)
 Explique la **traducción directa en memoria virtual segmentada/paginada**.
+
+<!--opciones
+*a) Base TS + segmento → base TP; + página → marco; DF = marco‖desplazamiento
+b) DF = segmento + página + desplazamiento
+c) Se busca la etiqueta en la caché
+d) DF = base del segmento + página
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -563,6 +862,13 @@ Combina la protección/compartición lógica de la segmentación con la ausencia
 ### Q54 (2019a)
 Explique los **fallos** que tiene la memoria caché.
 
+<!--opciones
+*a) Forzosos, de capacidad y de conflicto (3C)
+b) Lectura, escritura y borrado
+c) Internos, externos y de página
+d) De bus, de reloj y de energía
+-->
+
 <details><summary>Respuesta</summary>
 
 Las **3 C**:
@@ -574,6 +880,13 @@ Las **3 C**:
 
 ### Q55 (2019b)
 ¿Cuáles son las **ventajas de las políticas de actualización** (escritura)?
+
+<!--opciones
+*a) Inmediata: consistencia simple; aplazada: menos tráfico a MP
+b) Inmediata: menos tráfico; aplazada: consistencia total
+c) Ambas eliminan los fallos de caché
+d) Ninguna tiene ventajas
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -587,6 +900,13 @@ Explique en qué caso usar **signo y magnitud** y/o **complemento a dos**:
 a) Cuando es crítico que el hardware **niegue** un número de la forma más sencilla.
 b) Cuando la mayoría de las operaciones son **sumas y restas**.
 
+<!--opciones
+*a) a) Signo y magnitud; b) complemento a dos
+b) a) Complemento a dos; b) signo y magnitud
+c) Ambos casos signo y magnitud
+d) Ambos casos complemento a dos
+-->
+
 <details><summary>Respuesta</summary>
 
 a) **Signo y magnitud:** negar es solo invertir el bit de signo. (En C2 hay que invertir todos los bits y sumar 1.)
@@ -599,6 +919,13 @@ b) **Complemento a dos:** suma y resta usan el mismo sumador (restar = sumar el 
 
 ### Q57 🔁🔁 (2019b, 2025, 2025: salió en los 3)
 Una caché **asociativa por conjuntos** tiene bloques de **4 palabras de 16 bits** y tamaño de conjunto **2**. La caché contiene **4096 palabras de 16 bits**. La MP que se puede transferir a la caché es de **64K × 32 bits**. Encuentre el **formato de dirección** de la MCa.
+
+<!--opciones
+*a) Etiqueta 5 | Conjunto 9 | Palabra 2
+b) Etiqueta 6 | Conjunto 8 | Palabra 2
+c) Etiqueta 4 | Conjunto 10 | Palabra 2
+d) Etiqueta 7 | Conjunto 7 | Palabra 2
+-->
 
 <details><summary>Respuesta (solución oficial 2019b)</summary>
 
@@ -621,6 +948,13 @@ Diseñe un esquema de **transformación de direcciones virtuales**:
 - Páginas = **2K palabras**
 - Bus de direcciones de la memoria secundaria = **24 bits**
 
+<!--opciones
+*a) DV: página 4 + desplazamiento 11; DF: marco 2 + desplazamiento 11
+b) DV: página 5 + desplazamiento 10; DF: marco 3 + desplazamiento 10
+c) DV: página 4 + desplazamiento 11; DF: marco 4 + desplazamiento 11
+d) DV: página 2 + desplazamiento 13; DF: marco 2 + desplazamiento 11
+-->
+
 <details><summary>Respuesta</summary>
 
 - Dirección virtual: 32K = 2¹⁵ → **15 bits**
@@ -641,6 +975,13 @@ Traducción: la página indexa la tabla → presente: marco ‖ desplazamiento �
 Computador de **20 bits** con memoria virtual paginada, páginas de **1 KB** y memoria física de **256 KB**.
 a) Formato de la dirección virtual. b) Nº máximo de entradas de la tabla de páginas (un nivel). c) Nº de marcos de la MP.
 
+<!--opciones
+*a) Página 10 | desplazamiento 10; 1024 entradas; 256 marcos
+b) Página 10 | desplazamiento 10; 256 entradas; 1024 marcos
+c) Página 8 | desplazamiento 12; 1024 entradas; 256 marcos
+d) Página 12 | desplazamiento 8; 4096 entradas; 256 marcos
+-->
+
 <details><summary>Respuesta</summary>
 
 a) Página de 1 KB = 2¹⁰ → desplazamiento **10 bits**; nº de página = 20 − 10 = **10 bits**.
@@ -653,6 +994,13 @@ c) 256 KB / 1 KB = **256 marcos** (2⁸ → la dirección física tiene 8 + 10 =
 MP de **2¹⁶ bytes** direccionable por bytes, bloques de **8 bytes**, caché de **32 líneas** con **correspondencia directa**.
 a) ¿Cómo se divide la dirección de 16 bits?
 b) ¿En qué línea se almacenan los bytes de las direcciones **111B₁₆** y **C334₁₆**?
+
+<!--opciones
+*a) 8|5|3; 111B → línea 3; C334 → línea 6
+b) 8|5|3; 111B → línea 1; C334 → línea 3
+c) 5|8|3; 111B → línea 17; C334 → línea 195
+d) 8|5|3; 111B → línea 27; C334 → línea 52
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -670,6 +1018,13 @@ b)
 ### Q61 (2022)
 Una caché tiene **16 KB** de capacidad y líneas de **128 bytes**. ¿Cuántos conjuntos tiene si es asociativa por conjuntos de **2, 4 y 8 vías**?
 
+<!--opciones
+*a) 64, 32 y 16 conjuntos
+b) 128, 64 y 32 conjuntos
+c) 32, 16 y 8 conjuntos
+d) 2, 4 y 8 conjuntos
+-->
+
 <details><summary>Respuesta</summary>
 
 Líneas = 16 × 1024 / 128 = **128 líneas**.
@@ -684,6 +1039,13 @@ Líneas = 16 × 1024 / 128 = **128 líneas**.
 ### Q62 (2022)
 ¿Cuántos bits se necesitan para representar como **enteros binarios sin signo**: a) 12 b) 384 c) 1498? Explique.
 
+<!--opciones
+*a) 4, 9 y 11 bits
+b) 5, 10 y 12 bits
+c) 4, 8 y 10 bits
+d) 3, 9 y 11 bits
+-->
+
 <details><summary>Respuesta</summary>
 
 Con *n* bits se representa de 0 a 2ⁿ − 1 → n = ⌈log₂(N + 1)⌉.
@@ -696,6 +1058,13 @@ Con *n* bits se representa de 0 a 2ⁿ − 1 → n = ⌈log₂(N + 1)⌉.
 
 ### Q63 (2022)
 Siendo **M = 12** y **Q = −3**, calcule el resultado de la **división** (algoritmo de división con restauración, dejando constancia).
+
+<!--opciones
+*a) Cociente −4, residuo 0
+b) Cociente 4, residuo 0
+c) Cociente −4, residuo −3
+d) Cociente 0, residuo 12
+-->
 
 <details><summary>Respuesta (interpretado como 12 ÷ (−3))</summary>
 
@@ -724,6 +1093,13 @@ Ajuste: (+) ÷ (−) → **cociente = −4** (C2: `11100`), **residuo = 0**.
 ### Q64 (2019a)
 Algoritmo de **Booth: 11 × 5**.
 
+<!--opciones
+*a) 0000110111 = 55
+b) 0000101101 = 45
+c) 1111001001 = −55
+d) 0000110110 = 54
+-->
+
 <details><summary>Respuesta</summary>
 
 5 bits: M = 11 = `01011`, −M = `10101`, Q = 5 = `00101`. Regla: Q₀Q₋₁ = 10 → A ← A − M; 01 → A ← A + M; 00/11 → nada. Luego desplazamiento aritmético a la derecha de A, Q, Q₋₁.
@@ -747,6 +1123,13 @@ Resultado A‖Q = `0000110111` = **55** ✔
 ### Q65 (2019b)
 Algoritmo de **Booth: (−7) × (−3)**.
 
+<!--opciones
+*a) 00010101 = 21
+b) 11101011 = −21
+c) 00010010 = 18
+d) 00011001 = 25
+-->
+
 <details><summary>Respuesta</summary>
 
 4 bits: M = −7 = `1001`, −M = `0111`, Q = −3 = `1101`.
@@ -767,6 +1150,13 @@ Resultado A‖Q = `00010101` = **21** ✔
 
 ### Q66 (2020)
 Aplique **FIFO** a la secuencia **1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5** con **3 y 4 marcos**. Explique los resultados.
+
+<!--opciones
+*a) 3 marcos: 9 fallos; 4 marcos: 10 fallos (anomalía de Belady)
+b) 3 marcos: 10 fallos; 4 marcos: 9 fallos
+c) 3 marcos: 9 fallos; 4 marcos: 8 fallos
+d) Ambos casos 12 fallos
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -794,6 +1184,13 @@ Aplique **FIFO** a la secuencia **1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5** con **3 y
 
 ### Q67 (2019b)
 Determine **cuándo y qué bloque se sustituye** con las distintas políticas de reemplazo, con **4 marcos** y la secuencia: **2 4 2 5 1 4 3 1 6 5 1**
+
+<!--opciones
+*a) FIFO 6, LRU 7, Óptima 6 fallos
+b) FIFO 7, LRU 6, Óptima 5 fallos
+c) FIFO 8, LRU 8, Óptima 6 fallos
+d) FIFO 6, LRU 6, Óptima 6 fallos
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -837,6 +1234,13 @@ Sustituciones: 3 reemplaza a 2 (ya no se usa); 6 reemplaza a 3 (ya no se usa; ta
 ### Q68 (2019a)
 Sistema paginado con **4 marcos**, referencias **{c, a, d, b, e, b, a, b, c, d}**. Inicialmente están en memoria **{a, b}** (en ese orden). Analice el contenido con **FIFO** y **LRU**.
 
+<!--opciones
+*a) FIFO 7 fallos; LRU 5 fallos
+b) FIFO 5 fallos; LRU 7 fallos
+c) FIFO 8 fallos; LRU 6 fallos
+d) Ambas 6 fallos
+-->
+
 <details><summary>Respuesta</summary>
 
 **FIFO — 7 fallos** (cola inicial: a, b)
@@ -865,6 +1269,13 @@ LRU funciona mejor porque **a** y **b** se usan seguido y nunca se expulsan.
 ### Q69 (2019a)
 En la **tabla de segmentos**, el segmento 0 tiene **base 229** y **longitud 609**. ¿A qué dirección física corresponde la dirección virtual **(0, 440)**?
 
+<!--opciones
+*a) 669
+b) 440
+c) 838
+d) Violación de segmento
+-->
+
 <details><summary>Respuesta</summary>
 
 Se verifica el límite: 440 < 609 ✔ (si no, sería violación de segmento → trap).
@@ -873,6 +1284,13 @@ Dirección física = base + desplazamiento = 229 + 440 = **669**.
 
 ### Q70 (2019a)
 Un sistema tiene **64 KB** de memoria física en marcos de **4 KB**. Un programa tiene código de **32 768 B**, datos de **16 386 B** y pila de **15 870 B**. ¿Se podrá cargar? ¿Influye el tamaño de página?
+
+<!--opciones
+*a) No cabe: 17 páginas > 16 marcos; con páginas más pequeñas sí cabría
+b) Sí cabe: 15 páginas en 16 marcos
+c) Sí cabe, el tamaño de página no influye
+d) No cabe: necesita 32 marcos
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -887,6 +1305,13 @@ Un sistema tiene **64 KB** de memoria física en marcos de **4 KB**. Un programa
 
 ### Q71 (2019a)
 ¿Cuál es la representación decimal del punto flotante **84163852₁₆** (IEEE 754, precisión simple)?
+
+<!--opciones
+*a) ≈ −1,7658 × 10⁻³⁶
+b) ≈ +1,7658 × 10⁻³⁶
+c) ≈ −1,1736 × 2⁸
+d) ≈ −8,4164 × 10⁷
+-->
 
 <details><summary>Respuesta</summary>
 
@@ -908,6 +1333,13 @@ while (i < n) {
 }
 ```
 (Las preguntas concretas quedaron fuera de la foto. Lo que casi seguro piden:)
+
+<!--opciones
+*a) Etiqueta 17 | Conjunto 11 | Palabra 4
+b) Etiqueta 16 | Conjunto 12 | Palabra 4
+c) Etiqueta 18 | Conjunto 10 | Palabra 4
+d) Etiqueta 20 | Conjunto 8 | Palabra 4
+-->
 
 <details><summary>Respuesta (datos base)</summary>
 
