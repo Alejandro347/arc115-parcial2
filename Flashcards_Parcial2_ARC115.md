@@ -34,7 +34,6 @@
 
 ### Q1 🔁 (2019b, 2020, 2025)
 La estrategia que me permite **encontrar un dato** en la MCa se llama:
-a) Reemplazo b) Identificación c) Ubicación d) Escritura
 
 <!--opciones
 a) Estrategia de reemplazo
@@ -45,7 +44,7 @@ d) Estrategia de escritura
 
 <details><summary>Respuesta</summary>
 
-**b) Estrategia de identificación.** Usa la **etiqueta** del bloque (y el bit de validez) para saber si el dato está en la caché.
+**Estrategia de identificación.** Usa la **etiqueta** del bloque (y el bit de validez) para saber si el dato está en la caché.
 - Ubicación (correspondencia) → **dónde** se coloca un bloque (directa, asociativa, por conjuntos).
 - Reemplazo → **qué** bloque se saca (FIFO, LRU, LFU, aleatorio).
 - Escritura (actualización) → **cómo** se mantiene la coherencia con la MP (escritura directa / write-back).
@@ -53,7 +52,6 @@ d) Estrategia de escritura
 
 ### Q2 🔁 (2019b)
 Es un ejemplo de **localidad temporal**:
-a) While (bucles) b) Vectores c) Matrices d) Código secuencial
 
 <!--opciones
 *a) While (bucles)
@@ -64,13 +62,12 @@ d) Código secuencial
 
 <details><summary>Respuesta</summary>
 
-**a) Bucles.** Localidad temporal = se vuelve a referenciar pronto lo que se usó recientemente (bucles, subrutinas, contadores).
+**Bucles.** Localidad temporal = se vuelve a referenciar pronto lo que se usó recientemente (bucles, subrutinas, contadores).
 Vectores, matrices y código secuencial son ejemplos de **localidad espacial**.
 </details>
 
 ### Q3 🔁 (2025)
 Es un ejemplo de **localidad espacial**:
-a) Bucles b) Vectores c) Tablas d) Subrutinas
 
 <!--opciones
 a) Bucles
@@ -81,13 +78,12 @@ d) Subrutinas
 
 <details><summary>Respuesta</summary>
 
-**b) Vectores** (y también **c) Tablas**): se accede a posiciones con direcciones cercanas entre sí.
+**Vectores** (y también **tablas**): se accede a posiciones con direcciones cercanas entre sí.
 Bucles y subrutinas son localidad **temporal**.
 </details>
 
 ### Q4 (2019b)
 Uno de los sistemas operativos que permitía que el **programador trabajara directamente con los componentes internos (hardware)** era:
-a) SO monoprogramado b) SO interactivo c) SO de colas simples d) SO multiprogramado
 
 <!--opciones
 *a) SO monoprogramado
@@ -98,12 +94,11 @@ d) SO multiprogramado
 
 <details><summary>Respuesta</summary>
 
-**a) SO monoprogramado.** En los primeros sistemas (procesamiento en serie / monoprogramación) el programador interactuaba directamente con el hardware: cargaba el programa, operaba la consola, etc.
+**SO monoprogramado.** En los primeros sistemas (procesamiento en serie / monoprogramación) el programador interactuaba directamente con el hardware: cargaba el programa, operaba la consola, etc.
 </details>
 
 ### Q5 (2025)
 Capacidad de **acceder a una celda** de memoria:
-a) Posicionamiento b) Direccionamiento c) Dirección de celda d) a, b, c
 
 <!--opciones
 a) Posicionamiento
@@ -114,12 +109,11 @@ d) Todas las anteriores
 
 <details><summary>Respuesta</summary>
 
-**b) Direccionamiento.** Cada celda tiene una dirección única; la capacidad de seleccionarla es el direccionamiento (con *A* bits de dirección se direccionan 2^A celdas).
+**Direccionamiento.** Cada celda tiene una dirección única; la capacidad de seleccionarla es el direccionamiento (con *A* bits de dirección se direccionan 2^A celdas).
 </details>
 
 ### Q6 (2025)
 Es el **tiempo que se tarda en realizar una operación de lectura o escritura**:
-a) Ciclo de memoria b) Acceso aleatorio c) Ciclo de reloj d) a, b
 
 <!--opciones
 a) Ciclo de memoria
@@ -130,13 +124,12 @@ d) Ciclo de memoria y acceso aleatorio
 
 <details><summary>Respuesta</summary>
 
-**b) Tiempo de acceso** (la opción viene redactada como «acceso aleatorio»). En memorias de acceso aleatorio, el tiempo de acceso (latencia) es el tiempo para hacer una lectura o escritura.
+**Tiempo de acceso** (en el examen la opción venía redactada como «acceso aleatorio»). En memorias de acceso aleatorio, el tiempo de acceso (latencia) es el tiempo para hacer una lectura o escritura.
 El **ciclo de memoria** = tiempo de acceso + tiempo adicional antes de poder iniciar un segundo acceso, así que **no** es lo mismo.
 </details>
 
 ### Q7 (2025)
 Dentro del **método asociativo**, cada posición tiene su propio mecanismo de direccionamiento. ¿Qué dispositivos manejan mejor este método?
-a) Memoria principal b) Memoria caché c) Buffer del HD d) Memoria virtual
 
 <!--opciones
 a) Memoria principal
@@ -147,7 +140,7 @@ d) Memoria virtual
 
 <details><summary>Respuesta</summary>
 
-**b) Memoria caché.** El acceso asociativo compara una parte de la dirección (la etiqueta) con todas las posiciones a la vez; es típico de las cachés (y de la TLB).
+**Memoria caché.** El acceso asociativo compara una parte de la dirección (la etiqueta) con todas las posiciones a la vez; es típico de las cachés (y de la TLB).
 </details>
 
 ---

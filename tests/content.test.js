@@ -35,3 +35,23 @@ for (const [file, expected] of Object.entries(DECKS)) {
     }
   });
 }
+
+// Una línea con cuatro opciones cortas "a) … b) … c) … d) …" en el enunciado delata la respuesta en modo sin opciones.
+function inlineOptionsLine(statement) {
+  return statement.split('\n').find(line => {
+    const m = line.match(/(?:^|\s)a\)\s(.+?)\sb\)\s(.+?)\sc\)\s(.+?)\sd\)\s(.+)$/);
+    return m && m.slice(1).every(seg => seg.trim().length <= 30);
+  });
+}
+
+for (const file of Object.keys(DECKS)) {
+  test(file + ': el enunciado no muestra las opciones', () => {
+    const md = fs.readFileSync(path.join(__dirname, '..', file), 'utf8');
+    for (const c of cards(md)) {
+      const statement = c.body.slice(0, c.body.search(/<!--opciones|<details>/));
+      assert.equal(inlineOptionsLine(statement), undefined, 'opciones en el enunciado: ' + c.title);
+      const answer = c.body.slice(c.body.indexOf('<summary>'));
+      assert.ok(!/\*\*[a-d]\)\s/.test(answer), 'la respuesta cita una letra de opción: ' + c.title);
+    }
+  });
+}
