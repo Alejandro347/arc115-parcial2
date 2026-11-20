@@ -1,0 +1,12 @@
+# Solo se publica el material generado; los PDFs, fotos y apuntes originales quedan fuera.
+/*
+!/.gitignore
+!/.nojekyll
+!/index.html
+!/README.md
+!/assets/
+!/Algoritmos/
+!/Flashcards_Parcial2_ARC115.md
+!/Flashcards_Teoria_Diapositivas.md
+!/Simulacro_Parcial2.md
+!/Simulacro_Solucion.md
