@@ -1,6 +1,6 @@
 # Flashcards — Teoría de la diapositiva MEMORIA (2025)
 
-Preguntas sacadas directamente de `MEMORIAInterna (1).ppt` (diapositiva de este año), en temas que **no** cubren las preguntas de parciales anteriores. Los V/F de los parciales suelen copiar frases textuales de aquí. «diap. N» = página del PDF.
+Preguntas sacadas directamente de `MEMORIAInterna.pdf` (el último PDF que subió el ingeniero), en temas que **no** cubren las preguntas de parciales anteriores. Los V/F de los parciales suelen copiar frases textuales de aquí. «diap. N» = página del PDF.
 
 ---
 
@@ -276,12 +276,34 @@ Describa paso a paso la **organización/funcionamiento** de la caché ante una l
 Todo el mecanismo es **transparente** para la CPU.
 </details>
 
-### T26 (diap. 49)
-¿Qué es la política de **extracción** y cuáles son sus tipos?
+### T26 (diap. 48)
+¿Qué es la política de **extracción** y cuáles son sus tipos? Defina la extracción **por demanda**.
 
 <details><summary>Respuesta</summary>
 
-Determina **cuándo y qué** información se envía de la MP a la MCa. Tipos: **por demanda** (se trae el bloque cuando hay fallo), **con anticipación** (prebúsqueda) y **selectiva**.
+Determina **cuándo y qué** información se envía de la MP a la MCa. Las más usadas son **por demanda**, **con anticipación** y **selectiva**.
+**Por demanda:** se trae el bloque a la MCa en el momento en que se necesita, es decir, **cuando se produce un fallo**.
+</details>
+
+### T26b (diap. 49)
+Explique la **extracción con anticipación** (sus dos variantes y sus inconvenientes) y la **extracción selectiva**.
+
+<details><summary>Respuesta</summary>
+
+**Con anticipación:**
+- **Anticiparse siempre** (*always prefetch*): traer a la MCa el bloque **i+1** de la MP **siempre** que se haga referencia al bloque *i*.
+- **Anticiparse cuando se produce un fallo** (*prefetch on a miss*): traer el bloque **i+1** **solo si hay fallo** al referenciar el bloque *i*.
+- **Inconvenientes:** aumenta inútilmente el tráfico entre MP y MCa si no se comprueba antes si el bloque ya estaba en la MCa; pueden producirse **inconsistencias**.
+
+**Selectiva:** se **etiqueta** cierto tipo de información para que **nunca** se envíe a la MCa. Ej.: un sistema multiprocesador con memoria compartida.
+</details>
+
+### T26c (diap. 34)
+¿Qué niveles de caché y elementos de la jerarquía aparecen en el esquema de la diap. 34 (aprovechar los grados de localidad)?
+
+<details><summary>Respuesta</summary>
+
+Dentro de la CPU: unidades I/E, banco de registros, **caché L1 en el chip**, caché L2 en el chip, **TLB** y cachés de propósito especial. Fuera: cachés L2/L3 y L3/L4, red de interconexión, memoria principal, memoria virtual, archivos de disco, CD-ROM/cinta y otros computadores. La idea es que cada nivel aproveche un grado distinto de cumplimiento del principio de localidad.
 </details>
 
 ### T27 (diap. 50)

@@ -1,6 +1,6 @@
 # Algoritmos paso a paso — Parcial 2 ARC115
 
-Fuente principal: **diapositiva de este año** `MEMORIAInterna (1).ppt` (es un PDF de 94 páginas). Los números «diap. N» son páginas de ese PDF.
+Fuente principal: **diapositiva de este año** `MEMORIAInterna.pdf` (el último PDF que subió el ingeniero, 94 páginas). Todos los ejercicios de ese PDF, con enunciado y solución, están en [Ejercicios de la diapositiva](../Ejercicios_Diapositiva.md). Los números «diap. N» son páginas de ese PDF.
 También uso los parciales 2019–2025, los apuntes de clase (`ApuntesParcial2_18-09_04-11`) y el resumen de ecuaciones de `rod/`.
 
 > En los apuntes, después del ejemplo de MV segmentada/paginada (diap. 86–87), dice **«examen hasta aquí ↓ parcial 2»**. Los ejercicios finales (diap. 88–94) son lo último que se vio, así que van primero.

@@ -3,7 +3,7 @@
   const content = document.getElementById('content');
   const sidebar = document.getElementById('sidebar');
   const DEFAULT = 'README.md';
-  const FLASH = ['Flashcards_Parcial2_ARC115.md', 'Flashcards_Teoria_Diapositivas.md'];
+  const FLASH = ['Flashcards_Parcial2_ARC115.md', 'Flashcards_Teoria_Diapositivas.md', 'Ejercicios_Diapositiva.md'];
 
   // ---------- almacenamiento seguro ----------
   const store = {
@@ -108,6 +108,7 @@
         if (filter === 'dominadas') return known.has(c.title);
         if (filter === 'rep') return c.title.includes('🔁');
         if (filter === 'warn') return c.title.includes('⚠️');
+        if (filter === 'star') return c.title.includes('⭐');
         return true;
       });
       if (shuffle) for (let i = deck.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; }
