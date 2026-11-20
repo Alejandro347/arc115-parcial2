@@ -255,12 +255,151 @@
   let activeTimer = null;
   document.addEventListener('keydown', e => { if (keyHandler) keyHandler(e); });
 
+  // ---------- modo examen ----------
+  const DECKS = [
+    ['Flashcards_Parcial2_ARC115.md', 'Preguntas de parciales'],
+    ['Flashcards_Teoria_Diapositivas.md', 'Teoría de la diapositiva'],
+    ['Ejercicios_Diapositiva.md', 'Ejercicios de la diapositiva']
+  ];
+  const PER_Q = [[0, 'Sin límite'], [30, '30 s por pregunta'], [60, '1 min por pregunta'], [120, '2 min por pregunta']];
+
+  function exam() {
+    const root = document.createElement('div'); root.className = 'exam';
+    const cfg = store.get('examCfg', { decks: DECKS.map(d => d[0]), count: 10, perQ: 0 });
+
+    function el(tag, cls, html) { const e = document.createElement(tag); if (cls) e.className = cls; if (html !== undefined) e.innerHTML = html; return e; }
+    async function loadCards(paths) {
+      const out = [];
+      for (const p of paths) out.push(...extractCards(render(await load(p), p), p));
+      return out;
+    }
+
+    function setup() {
+      root.innerHTML = '<h1>📝 Modo examen</h1><p class="muted">Responde como en el parcial: eliges una opción por pregunta y al final entregas para ver tu nota.</p>';
+      const form = el('div', 'exam-setup');
+      form.appendChild(el('h3', '', 'Mazos'));
+      DECKS.forEach(([p, name]) => {
+        const l = el('label', 'check');
+        l.innerHTML = '<input type="checkbox" value="' + p + '"' + (cfg.decks.includes(p) ? ' checked' : '') + '> ' + name;
+        form.appendChild(l);
+      });
+      form.appendChild(el('h3', '', 'Número de preguntas'));
+      const cnt = el('select', 'btn'); [10, 20, 30, 9999].forEach(n => cnt.add(new Option(n === 9999 ? 'Todas' : String(n), n)));
+      cnt.value = String(cfg.count); form.appendChild(cnt);
+      form.appendChild(el('h3', '', '⏱ Contrarreloj'));
+      const tim = el('select', 'btn'); PER_Q.forEach(([s, t]) => tim.add(new Option(t, s)));
+      tim.value = String(cfg.perQ); form.appendChild(tim);
+      const go = el('button', 'btn primary start', 'Comenzar');
+      const sync = () => { go.disabled = !form.querySelectorAll('input:checked').length; };
+      form.addEventListener('change', sync); sync();
+      go.onclick = async () => {
+        cfg.decks = Array.from(form.querySelectorAll('input:checked')).map(i => i.value);
+        cfg.count = +cnt.value; cfg.perQ = +tim.value; store.set('examCfg', cfg);
+        go.disabled = true; go.textContent = 'Cargando…';
+        const cards = await loadCards(cfg.decks);
+        start(QuizCore.buildExam(cards, cfg.count));
+      };
+      form.appendChild(el('div', '', '')).appendChild(go);
+      root.appendChild(form);
+    }
+
+    function start(questions) {
+      if (!questions.length) { root.innerHTML = '<h1>📝 Modo examen</h1><p>No hay preguntas con opciones en los mazos elegidos.</p>'; return; }
+      const answers = new Array(questions.length);
+      const total = cfg.perQ * questions.length;
+      const t0 = Date.now();
+      root.innerHTML = '';
+      const barEl = el('div', 'exam-bar');
+      const prog = el('span', 'exam-prog'); const clock = el('span', 'timer'); const send = el('button', 'btn primary', 'Entregar');
+      barEl.append(prog, clock, send);
+      root.append(el('h1', '', '📝 Examen'), barEl);
+      const upd = () => { prog.textContent = 'Respondidas ' + answers.filter(a => a !== undefined).length + '/' + questions.length; };
+      questions.forEach((q, qi) => {
+        const box = el('section', 'exam-q');
+        box.appendChild(el('div', 'tag', (qi + 1) + ' · ' + q.section));
+        const h = el('h3'); h.textContent = q.title; box.appendChild(h);
+        q.front.forEach(n => box.appendChild(n.cloneNode(true)));
+        wrapTables(box);
+        const opts = el('div', 'opts');
+        q.opts.options.forEach((text, i) => {
+          const b = el('button', 'opt', '<span class="opt-letter">' + LETTERS[i] + '</span>'); b.type = 'button';
+          b.appendChild(document.createTextNode(text));
+          b.onclick = () => { answers[qi] = i; opts.querySelectorAll('.opt').forEach((x, j) => x.classList.toggle('selected', j === i)); upd(); };
+          opts.appendChild(b);
+        });
+        box.appendChild(opts); root.appendChild(box);
+      });
+      const send2 = el('button', 'btn primary', 'Entregar examen'); root.appendChild(el('div', 'pactions')).appendChild(send2);
+      upd();
+      let finished = false;
+      const finish = (auto) => {
+        if (finished) return;
+        const blank = answers.filter(a => a === undefined).length;
+        if (!auto && blank && !confirm('Tienes ' + blank + ' preguntas sin responder. ¿Entregar?')) return;
+        finished = true;
+        if (activeTimer) { activeTimer.stop(); activeTimer = null; }
+        results(questions, answers, Math.round((Date.now() - t0) / 1000), auto);
+      };
+      send.onclick = () => finish(false); send2.onclick = () => finish(false);
+      if (total) {
+        clock.textContent = '⏱ ' + QuizCore.formatTime(total);
+        activeTimer = QuizCore.createCountdown(total, t => { clock.textContent = '⏱ ' + QuizCore.formatTime(t); clock.classList.toggle('low', t <= 30); },
+          () => { activeTimer = null; finish(true); });
+      } else clock.textContent = '⏱ Sin límite';
+      window.scrollTo({ top: 0 });
+    }
+
+    function results(questions, answers, secs, auto) {
+      const r = QuizCore.gradeExam(questions, answers);
+      root.innerHTML = '';
+      root.appendChild(el('h1', '', '📝 Resultado'));
+      const sum = el('div', 'result');
+      sum.innerHTML = (auto ? '<p>⏰ <b>Se acabó el tiempo</b>: el examen se entregó automáticamente.</p>' : '') +
+        '<p class="grade">Nota: <b>' + r.grade.toFixed(1) + '</b>/10</p>' +
+        '<p>' + r.correct + ' de ' + r.total + ' correctas · ' + r.details.filter(d => d.blank).length + ' sin responder · tiempo usado ' + QuizCore.formatTime(secs) + '</p>';
+      const again = el('div', 'pactions');
+      const failed = questions.filter((q, i) => !r.details[i].ok);
+      const bFail = el('button', 'btn warn', 'Repetir solo las falladas (' + failed.length + ')');
+      bFail.disabled = !failed.length;
+      bFail.onclick = () => start(QuizCore.shuffle(failed).map(q => Object.assign({}, q, { opts: QuizCore.shuffleOptions(q.opts) })));
+      const bNew = el('button', 'btn primary', 'Nuevo examen'); bNew.onclick = setup;
+      again.append(bFail, bNew); sum.appendChild(again); root.appendChild(sum);
+      questions.forEach((q, qi) => {
+        const d = r.details[qi];
+        const box = el('section', 'exam-q ' + (d.ok ? 'ok' : 'bad'));
+        box.appendChild(el('div', 'tag', (qi + 1) + ' · ' + (d.ok ? '✅ Correcta' : d.blank ? '⬜ Sin responder' : '❌ Incorrecta')));
+        const h = el('h3'); h.textContent = q.title; box.appendChild(h);
+        q.front.forEach(n => box.appendChild(n.cloneNode(true)));
+        const opts = el('div', 'opts');
+        q.opts.options.forEach((text, i) => {
+          const b = el('button', 'opt', '<span class="opt-letter">' + LETTERS[i] + '</span>'); b.disabled = true; b.type = 'button';
+          b.appendChild(document.createTextNode(text));
+          if (i === d.correct) b.classList.add('correct'); else if (i === d.chosen) b.classList.add('wrong');
+          opts.appendChild(b);
+        });
+        box.appendChild(opts);
+        const det = el('details', '', '<summary>Ver explicación</summary>');
+        q.back.forEach(n => det.appendChild(n.cloneNode(true)));
+        box.appendChild(det); wrapTables(box);
+        root.appendChild(box);
+      });
+      window.scrollTo({ top: 0 });
+    }
+
+    setup();
+    return root;
+  }
+
   // ---------- router ----------
   async function route() {
     const path = currentPath();
     const mode = new URLSearchParams(location.hash.split('?')[1] || '').get('modo');
     sidebar.classList.remove('open'); setActive(path); keyHandler = null;
     if (activeTimer) { activeTimer.stop(); activeTimer = null; }
+    if (path === 'examen') {
+      content.innerHTML = ''; content.appendChild(exam());
+      document.title = 'ARC115 · Modo examen'; window.scrollTo({ top: 0 }); return;
+    }
     try {
       const md = await load(path);
       const div = render(md, path);
