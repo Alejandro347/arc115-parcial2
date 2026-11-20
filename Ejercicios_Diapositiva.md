@@ -1,4 +1,4 @@
-# Ejercicios de la diapositiva MEMORIA (MEMORIAInterna.pdf)
+# Ejercicios de la diapositiva
 
 Todos los ejercicios y ejemplos del **último PDF que subió el ingeniero**, en el orden de la diapositiva («diap. N» = página del PDF). Están aquí el enunciado y la solución paso a paso. En modo práctica, intenta resolverlos en papel antes de voltear la tarjeta.
 Para el procedimiento general de cada tipo, ve a [Algoritmos paso a paso](Algoritmos/00_INDICE.md).

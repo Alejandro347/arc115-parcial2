@@ -4,38 +4,60 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ARC115 · Parcial 2</title>
-<meta name="description" content="Flashcards, algoritmos paso a paso y simulacro para el Parcial 2 de Arquitectura de Computadoras (ARC115).">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232f5d8a'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='monospace'>P2</text></svg>">
+<meta name="description" content="Tarjetas, modo examen con contrarreloj, ejercicios resueltos y simulacro para el Parcial 2 de Arquitectura de Computadoras (ARC115): memoria caché y memoria virtual.">
+<meta name="theme-color" content="#1d5c4a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Repaso de memoria · Parcial 2 de ARC115">
+<meta property="og:description" content="Tarjetas con y sin opciones, modo examen con contrarreloj, ejercicios de la diapositiva y simulacro.">
+<meta property="og:image" content="https://alejandro347.github.io/arc115-parcial2/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<a class="skip" href="#content">Saltar al contenido</a>
 <header class="topbar">
-  <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
-  <a class="brand" href="#/README.md">ARC115 <span>· Parcial 2</span></a>
-  <button class="theme-btn" id="themeBtn" aria-label="Cambiar tema">◐</button>
+  <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-controls="sidebar">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+  </button>
+  <a class="brand" href="#/README.md" aria-label="Inicio: repaso del Parcial 2 de ARC115">
+    <svg class="brand-mark" viewBox="0 0 30 14" aria-hidden="true">
+      <rect class="f-tag" x="0" y="0" width="13" height="14" rx="1.5"/>
+      <rect class="f-set" x="14" y="0" width="10" height="14" rx="1.5"/>
+      <rect class="f-word" x="25" y="0" width="5" height="14" rx="1.5"/>
+    </svg>
+    <span class="brand-text">ARC115 <span>Parcial 2</span></span>
+  </a>
+  <button class="theme-btn" id="themeBtn" aria-label="Cambiar entre tema claro y oscuro">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M10 3.5a6.5 6.5 0 0 1 0 13z" class="fill"/></svg>
+  </button>
 </header>
 <div class="layout">
-  <nav class="sidebar" id="sidebar">
-    <div class="nav-group">Inicio</div>
-    <a href="#/README.md">Cómo usar esta página</a>
-    <div class="nav-group">Flashcards</div>
+  <nav class="sidebar" id="sidebar" aria-label="Secciones">
+    <a href="#/README.md">Inicio</a>
+    <div class="nav-group">Practicar</div>
+    <a href="#/examen">Modo examen</a>
     <a href="#/Flashcards_Parcial2_ARC115.md">Preguntas de parciales anteriores</a>
     <a href="#/Flashcards_Teoria_Diapositivas.md">Teoría de la diapositiva</a>
-    <div class="nav-group">Ejercicios</div>
-    <a href="#/Ejercicios_Diapositiva.md">Ejercicios de la diapositiva (17)</a>
-    <div class="nav-group">Algoritmos paso a paso</div>
+    <a href="#/Ejercicios_Diapositiva.md">Ejercicios de la diapositiva</a>
+    <div class="nav-group">Aprender a resolver</div>
     <a href="#/Algoritmos/00_INDICE.md">Índice y fórmulas</a>
-    <a href="#/Algoritmos/01_Memoria_Virtual.md">1 · Memoria virtual</a>
-    <a href="#/Algoritmos/02_Cache_Correspondencia.md">2 · Caché: correspondencia</a>
-    <a href="#/Algoritmos/03_Politicas_Reemplazo.md">3 · Políticas de reemplazo</a>
-    <a href="#/Algoritmos/04_Tiempos_y_Costos.md">4 · Tiempos y costos</a>
-    <a href="#/Algoritmos/05_Aritmetica.md">5 · Aritmética</a>
-    <div class="nav-group">Práctica</div>
-    <a href="#/examen">📝 Modo examen</a>
-    <a href="#/Simulacro_Parcial2.md">Simulacro de parcial</a>
-    <a href="#/Simulacro_Solucion.md">Solucionario del simulacro</a>
+    <a href="#/Algoritmos/01_Memoria_Virtual.md"><span class="nav-n">1</span>Memoria virtual</a>
+    <a href="#/Algoritmos/02_Cache_Correspondencia.md"><span class="nav-n">2</span>Caché: correspondencia</a>
+    <a href="#/Algoritmos/03_Politicas_Reemplazo.md"><span class="nav-n">3</span>Políticas de reemplazo</a>
+    <a href="#/Algoritmos/04_Tiempos_y_Costos.md"><span class="nav-n">4</span>Tiempos y costos</a>
+    <a href="#/Algoritmos/05_Aritmetica.md"><span class="nav-n">5</span>Aritmética</a>
+    <div class="nav-group">Simulacro</div>
+    <a href="#/Simulacro_Parcial2.md">Enunciado</a>
+    <a href="#/Simulacro_Solucion.md">Solucionario</a>
   </nav>
-  <main class="content" id="content"><p class="muted">Cargando…</p></main>
+  <main class="content" id="content" tabindex="-1"><p class="muted">Cargando…</p></main>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 <script src="assets/quiz-core.js"></script>

@@ -1,4 +1,4 @@
-# Flashcards — Parcial 2 ARC115 (preguntas de parciales anteriores)
+# Preguntas de parciales anteriores
 
 **Fuentes:** Parcial 2a 2019, Parcial 2b 2019, Parcial II 2020 (12/12/2020), Parcial II 2022 (14/11/2022, + EP2-2022), Parcial II 2025 (dos versiones: fotos `2025.jpeg` y `repetido 2025.jpg.jpeg`).
 

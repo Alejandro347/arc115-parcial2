@@ -134,8 +134,8 @@
     const bar = document.createElement('div'); bar.className = 'pbar'; bar.innerHTML = '<div></div>';
     const modes = document.createElement('div'); modes.className = 'modebar';
     modes.innerHTML =
-      '<button class="btn" id="mOpt">🔘 Con opciones</button>' +
-      '<button class="btn" id="mFlip">🃏 Sin opciones</button>';
+      '<button class="btn" id="mOpt">Con opciones</button>' +
+      '<button class="btn" id="mFlip">Sin opciones</button>';
     const controls = document.createElement('div'); controls.className = 'modebar';
     controls.innerHTML =
       '<select class="btn" id="fsel" aria-label="Filtro">' +
@@ -203,12 +203,12 @@
       wrapTables(cardEl);
       if (withOpts) {
         optCtl = renderOptions(cardEl, QuizCore.shuffleOptions(c.opts), (i, ok) => answered(c, ok, false));
-        actions.append(mk('Saltar →', '', next));
+        actions.append(mk('Saltar', '', next));
       } else if (shown) {
         showAnswer(cardEl, c);
         actions.append(mk('Repasar otra vez', 'warn', () => mark(false)), mk('¡Lo sé!', 'good', () => mark(true)));
       } else {
-        actions.append(mk('Mostrar respuesta', 'primary', flip), mk('Saltar →', '', next));
+        actions.append(mk('Mostrar respuesta', 'primary', flip), mk('Saltar', '', next));
       }
       if (withOpts || !shown) startTimer(c);
     }
@@ -217,7 +217,7 @@
       if (ok) known.add(c.title); else { known.delete(c.title); deck.push(deck[idx]); }
       store.set(key, Array.from(known));
       showAnswer(cardEl, c, timeout ? '⏰ <b>Tiempo agotado.</b>' : (ok ? '✅ <b>¡Correcto!</b>' : '❌ <b>Incorrecto.</b>'));
-      actions.innerHTML = ''; actions.append(mk('Siguiente →', 'primary', next));
+      actions.innerHTML = ''; actions.append(mk('Siguiente', 'primary', next));
     }
     function mk(t, cls, fn) { const b = document.createElement('button'); b.className = 'btn ' + cls; b.textContent = t; b.onclick = fn; return b; }
     function flip() { shown = true; draw(); }
@@ -275,7 +275,7 @@
     }
 
     function setup() {
-      root.innerHTML = '<h1>📝 Modo examen</h1><p class="muted">Responde como en el parcial: eliges una opción por pregunta y al final entregas para ver tu nota.</p>';
+      root.innerHTML = '<h1>Modo examen</h1><p class="muted">Responde como en el parcial: eliges una opción por pregunta y al final entregas para ver tu nota.</p>';
       const form = el('div', 'exam-setup');
       form.appendChild(el('h3', '', 'Mazos'));
       DECKS.forEach(([p, name]) => {
@@ -289,7 +289,7 @@
       form.appendChild(el('h3', '', '⏱ Contrarreloj'));
       const tim = el('select', 'btn'); PER_Q.forEach(([s, t]) => tim.add(new Option(t, s)));
       tim.value = String(cfg.perQ); form.appendChild(tim);
-      const go = el('button', 'btn primary start', 'Comenzar');
+      const go = el('button', 'btn primary big start', 'Comenzar examen');
       const sync = () => { go.disabled = !form.querySelectorAll('input:checked').length; };
       form.addEventListener('change', sync); sync();
       go.onclick = async () => {
@@ -298,7 +298,7 @@
         go.disabled = true; go.textContent = 'Cargando…';
         let cards;
         try { cards = await loadCards(cfg.decks); }
-        catch (err) { go.disabled = false; go.textContent = 'Comenzar'; alert('No se pudieron cargar las preguntas: ' + err.message); return; }
+        catch (err) { go.disabled = false; go.textContent = 'Comenzar examen'; alert('No se pudieron cargar las preguntas: ' + err.message); return; }
         if (!root.isConnected) return; // el usuario salió mientras cargaba
         start(QuizCore.buildExam(cards, cfg.count));
       };
@@ -307,7 +307,7 @@
     }
 
     function start(questions) {
-      if (!questions.length) { root.innerHTML = '<h1>📝 Modo examen</h1><p>No hay preguntas con opciones en los mazos elegidos.</p>'; return; }
+      if (!questions.length) { root.innerHTML = '<h1>Modo examen</h1><p>No hay preguntas con opciones en los mazos elegidos.</p>'; return; }
       const answers = new Array(questions.length);
       const total = cfg.perQ * questions.length;
       const t0 = Date.now();
@@ -315,7 +315,7 @@
       const barEl = el('div', 'exam-bar');
       const prog = el('span', 'exam-prog'); const clock = el('span', 'timer'); const send = el('button', 'btn primary', 'Entregar');
       barEl.append(prog, clock, send);
-      root.append(el('h1', '', '📝 Examen'), barEl);
+      root.append(el('h1', '', 'Examen'), barEl);
       const upd = () => { prog.textContent = 'Respondidas ' + (questions.length - QuizCore.countBlank(answers, questions.length)) + '/' + questions.length; };
       questions.forEach((q, qi) => {
         const box = el('section', 'exam-q');
@@ -355,7 +355,7 @@
     function results(questions, answers, secs, auto) {
       const r = QuizCore.gradeExam(questions, answers);
       root.innerHTML = '';
-      root.appendChild(el('h1', '', '📝 Resultado'));
+      root.appendChild(el('h1', '', 'Resultado'));
       const sum = el('div', 'result');
       sum.innerHTML = (auto ? '<p>⏰ <b>Se acabó el tiempo</b>: el examen se entregó automáticamente.</p>' : '') +
         '<p class="grade">Nota: <b>' + r.grade.toFixed(1) + '</b>/10</p>' +
@@ -393,6 +393,27 @@
     return root;
   }
 
+  // ---------- portada ----------
+  // Registro de dirección real: 2A5C7₁₆ (problema 1 del simulacro) en una caché de 4 vías.
+  function hero() {
+    const fields = [['tag', 'Etiqueta', '1010100', '54₁₆'], ['set', 'Conjunto', '10111000', '184'], ['word', 'Palabra', '111', '7']];
+    const h = document.createElement('section'); h.className = 'hero';
+    let i = 0;
+    const reg = fields.map(([cls, name, bits, val]) =>
+      '<div class="reg-field ' + cls + '"><div class="reg-bits">' +
+      bits.split('').map(b => '<span class="bit" style="--i:' + (i++) + '">' + b + '</span>').join('') +
+      '</div><div class="reg-label">' + name + '<b>' + val + '</b></div></div>').join('');
+    h.innerHTML =
+      '<div class="reg" role="img" aria-label="Dirección 2A5C7 hexadecimal dividida en etiqueta 54, conjunto 184 y palabra 7">' + reg + '</div>' +
+      '<p class="reg-caption">La dirección <code>2A5C7₁₆</code> en una caché de 4 vías con 256 conjuntos y bloques de 8 palabras: el problema 1 del simulacro.</p>' +
+      '<h1>Repaso de memoria para el parcial 2 de ARC115</h1>' +
+      '<p class="hero-lead">Caché, memoria virtual y políticas de reemplazo, con las preguntas de parciales anteriores y los ejercicios de la diapositiva del ingeniero.</p>' +
+      '<div class="hero-actions"><a class="btn primary big" href="#/examen">Hacer un examen</a>' +
+      '<a class="btn big" href="#/Flashcards_Parcial2_ARC115.md">Practicar con tarjetas</a>' +
+      '<a href="#/Algoritmos/00_INDICE.md">Ver cómo resolver cada ejercicio</a></div>';
+    return h;
+  }
+
   // ---------- router ----------
   async function route() {
     const path = currentPath();
@@ -411,12 +432,15 @@
         const h1 = div.querySelector('h1');
         const bar = document.createElement('div'); bar.className = 'modebar';
         const practiceMode = mode !== 'lista';
-        bar.innerHTML = '<a class="btn" aria-pressed="' + practiceMode + '" href="#/' + path + '">🃏 Modo práctica</a>' +
-          '<a class="btn" aria-pressed="' + !practiceMode + '" href="#/' + path + '?modo=lista">📄 Ver todas (lista)</a>';
+        bar.innerHTML = '<a class="btn" aria-pressed="' + practiceMode + '" href="#/' + path + '">Practicar</a>' +
+          '<a class="btn" aria-pressed="' + !practiceMode + '" href="#/' + path + '?modo=lista">Ver todas en lista</a>';
         if (h1) content.appendChild(h1.cloneNode(true));
         content.appendChild(bar);
         if (practiceMode) content.appendChild(practice(path, div));
         else { if (h1) h1.remove(); content.appendChild(div); }
+      } else if (path === DEFAULT) {
+        const h1 = div.querySelector('h1'); if (h1) { const p = h1.nextElementSibling; h1.remove(); if (p && p.tagName === 'P') p.remove(); }
+        content.append(hero(), div);
       } else content.appendChild(div);
       const h1now = content.querySelector('h1');
       document.title = h1now ? 'ARC115 · ' + h1now.textContent : 'ARC115 · Parcial 2';

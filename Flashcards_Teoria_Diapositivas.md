@@ -1,4 +1,4 @@
-# Flashcards — Teoría de la diapositiva MEMORIA (2025)
+# Teoría de la diapositiva
 
 Preguntas sacadas directamente de `MEMORIAInterna.pdf` (el último PDF que subió el ingeniero), en temas que **no** cubren las preguntas de parciales anteriores. Los V/F de los parciales suelen copiar frases textuales de aquí. «diap. N» = página del PDF.
 
