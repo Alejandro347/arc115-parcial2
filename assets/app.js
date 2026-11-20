@@ -93,7 +93,7 @@
     controls.innerHTML =
       '<select class="btn" id="fsel" aria-label="Filtro">' +
       '<option value="pendientes">Pendientes</option><option value="todas">Todas</option>' +
-      '<option value="rep">Solo 🔁 repetidas</option><option value="warn">Solo ⚠️ dudosas</option>' +
+      '<option value="rep">Solo 🔁 repetidas</option><option value="warn">Solo ⚠️ dudosas</option><option value="star">Solo ⭐ últimos vistos</option>' +
       '<option value="dominadas">Ya dominadas</option></select>' +
       '<button class="btn" id="shuf" aria-pressed="' + shuffle + '">Aleatorio</button>' +
       '<button class="btn" id="reset">Reiniciar progreso</button>';
