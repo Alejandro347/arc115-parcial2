@@ -36,6 +36,13 @@
 La estrategia que me permite **encontrar un dato** en la MCa se llama:
 a) Reemplazo b) Identificación c) Ubicación d) Escritura
 
+<!--opciones
+a) Estrategia de reemplazo
+*b) Estrategia de identificación
+c) Estrategia de ubicación
+d) Estrategia de escritura
+-->
+
 <details><summary>Respuesta</summary>
 
 **b) Estrategia de identificación.** Usa la **etiqueta** del bloque (y el bit de validez) para saber si el dato está en la caché.
@@ -107,6 +114,11 @@ a) Memoria principal b) Memoria caché c) Buffer del HD d) Memoria virtual
 
 ### Q8 🔁 ⚠️ (2020, 2022)
 «El **ancho del bus de datos** limita el tamaño de la memoria que puede ser direccionada.»
+
+<!--opciones
+Verdadero
+*Falso
+-->
 
 <details><summary>Respuesta</summary>
 
