@@ -244,6 +244,6 @@
 - Modify: `.gitignore` (ya trae `tests/` y `docs/` desde Task 1; verificar)
 
 - [ ] **Step 1: Correr `node --test tests/` y `node --check assets/app.js assets/quiz-core.js`.** Expected: PASS y sin salida.
-- [ ] **Step 2: Comprobar que no se publican datos personales:** `git grep -n -i -E "kevin|portillo|carranza|daniel|@gmail"`. Expected: sin coincidencias.
+- [ ] **Step 2: Comprobar que no se publican datos personales:** `git grep` con los nombres de los estudiantes que aparecen en los exámenes originales y con `@gmail`. Expected: sin coincidencias.
 - [ ] **Step 3: Commit y push** `git commit -am "Documentar modo examen y contrarreloj" && git push`
 - [ ] **Step 4: Esperar el build de Pages** (`gh api repos/Alejandro347/arc115-parcial2/pages/builds/latest --jq .status` → `built` con el commit nuevo) y abrir `https://alejandro347.github.io/arc115-parcial2/#/examen`. Expected: la pantalla de configuración carga, un examen de 10 preguntas se puede entregar y muestra la nota.
