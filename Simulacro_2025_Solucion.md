@@ -1,6 +1,6 @@
-# Solucionario — Simulacro tipo 2024
+# Solucionario — Simulacro tipo 2025
 
-Para corregir el [Simulacro tipo 2024](Simulacro_2024.md). Al final de cada respuesta se indica la tarjeta o la diapositiva que repasar si fallaste.
+Para corregir el [Simulacro tipo 2025](Simulacro_2025.md). Al final de cada respuesta se indica la tarjeta o la diapositiva que repasar si fallaste.
 
 ## PARTE I
 

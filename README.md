@@ -12,7 +12,7 @@ Material de repaso para el **Parcial 2 de Arquitectura de Computadoras (ARC115)*
 | [Algoritmos paso a paso](Algoritmos/00_INDICE.md) | Cómo resolver cada tipo de ejercicio, con los ejemplos de clase resueltos |
 | [📝 Modo examen](#/examen) | Examen con opciones, nota sobre 10 y contrarreloj, armado con preguntas al azar de los tres mazos |
 | [Simulacro](Simulacro_Parcial2.md) + [Solucionario](Simulacro_Solucion.md) | Un parcial de práctica con números nuevos |
-| [Simulacro tipo 2024](Simulacro_2024.md) + [Solucionario](Simulacro_2024_Solucion.md) | La misma estructura y los mismos porcentajes que el parcial de la foto `2025.jpeg` (probablemente del 2024), con datos nuevos |
+| [Simulacro tipo 2025](Simulacro_2025.md) + [Solucionario](Simulacro_2025_Solucion.md) | La misma estructura y los mismos porcentajes que el parcial 2025, con datos nuevos |
 
 ## Cómo usarla
 

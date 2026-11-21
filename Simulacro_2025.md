@@ -1,7 +1,7 @@
-# Simulacro tipo 2024
+# Simulacro tipo 2025
 
-Copia de la **estructura exacta** del parcial de la foto `2025.jpeg` (probablemente del 2024): mismas partes, mismos porcentajes y los mismos tipos de pregunta, pero con **datos nuevos**.
-Resuélvelo a mano, sin apuntes y con cronómetro (100 min). Después corrige con el [solucionario](Simulacro_2024_Solucion.md).
+Copia de la **estructura exacta** del parcial 2025 (foto `2025.jpeg`): mismas partes, mismos porcentajes y los mismos tipos de pregunta, pero con **datos nuevos**.
+Resuélvelo a mano, sin apuntes y con cronómetro (100 min). Después corrige con el [solucionario](Simulacro_2025_Solucion.md).
 
 > Las preguntas originales de ese parcial están en las tarjetas Q3, Q5, Q6, Q19, Q21, Q22, Q24, Q26, Q27, Q28, Q38, Q43, Q45, Q46, Q57, Q58 y Q59 de [Preguntas de parciales anteriores](Flashcards_Parcial2_ARC115.md).
 
