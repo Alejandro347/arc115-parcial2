@@ -96,3 +96,10 @@ test('countBlank cuenta huecos aunque el arreglo sea disperso', () => {
   assert.equal(Q.countBlank(a, 10), 7);
   assert.equal(Q.countBlank([], 3), 3);
 });
+
+test('matchesQuery busca sin importar acentos ni mayúsculas', () => {
+  assert.equal(Q.matchesQuery('**Página**: bloque de tamaño fijo', 'pagina'), true);
+  assert.equal(Q.matchesQuery('MAR (Memory Address Register)', 'address reg'), true);
+  assert.equal(Q.matchesQuery('LRU: menos recientemente usado', 'fifo'), false);
+  assert.equal(Q.matchesQuery('cualquier texto', '   '), true);
+});

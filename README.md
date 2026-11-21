@@ -9,6 +9,7 @@ Material de repaso para el **Parcial 2 de Arquitectura de Computadoras (ARC115)*
 | [Preguntas de parciales anteriores](Flashcards_Parcial2_ARC115.md) | 72 preguntas reales de parciales, con respuesta. 🔁 = salió más de una vez · ⚠️ = las claves no coinciden |
 | [Teoría de la diapositiva](Flashcards_Teoria_Diapositivas.md) | 45 tarjetas de los temas de la diapositiva que no salieron antes (típicos de V/F) |
 | [Ejercicios de la diapositiva](Ejercicios_Diapositiva.md) | Los 17 ejercicios del último PDF del ingeniero (`MEMORIAInterna.pdf`), con enunciado y solución paso a paso; se pueden practicar como tarjetas |
+| [Glosario](Glosario.md) | Definición de cada término y sigla del curso (TLB, MAR, write back, hiperpaginación…), con buscador |
 | [Algoritmos paso a paso](Algoritmos/00_INDICE.md) | Cómo resolver cada tipo de ejercicio, con los ejemplos de clase resueltos |
 | [📝 Modo examen](#/examen) | Examen con opciones, nota sobre 10 y contrarreloj, armado con preguntas al azar de los tres mazos |
 | [Simulacro](Simulacro_Parcial2.md) + [Solucionario](Simulacro_Solucion.md) | Un parcial de práctica con números nuevos |

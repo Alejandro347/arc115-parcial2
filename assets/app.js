@@ -393,6 +393,28 @@
     return root;
   }
 
+  // ---------- glosario ----------
+  function glossarySearch(div) {
+    const box = document.createElement('div'); box.className = 'gsearch';
+    box.innerHTML = '<label for="gq">Buscar un término o una sigla</label>' +
+      '<input id="gq" type="search" autocomplete="off" placeholder="Ej.: TLB, localidad, write back…">' +
+      '<p class="muted" id="gcount" aria-live="polite"></p>';
+    const items = Array.from(div.querySelectorAll('li'));
+    const input = box.querySelector('input'), count = box.querySelector('#gcount');
+    function apply() {
+      let n = 0;
+      items.forEach(li => { const ok = QuizCore.matchesQuery(li.textContent, input.value); li.hidden = !ok; if (ok) n++; });
+      div.querySelectorAll('h2').forEach(h => {
+        const ul = h.nextElementSibling;
+        const any = ul && Array.from(ul.children).some(li => !li.hidden);
+        h.hidden = !any; if (ul) ul.hidden = !any;
+      });
+      count.textContent = input.value.trim() ? n + ' de ' + items.length + ' términos' : items.length + ' términos';
+    }
+    input.addEventListener('input', apply); apply();
+    return box;
+  }
+
   // ---------- portada ----------
   // Registro de dirección real: 2A5C7₁₆ (problema 1 del simulacro) en una caché de 4 vías.
   function hero() {
@@ -438,6 +460,10 @@
         content.appendChild(bar);
         if (practiceMode) content.appendChild(practice(path, div));
         else { if (h1) h1.remove(); content.appendChild(div); }
+      } else if (path === 'Glosario.md') {
+        const h1 = div.querySelector('h1'); const intro = h1 && h1.nextElementSibling;
+        content.appendChild(div);
+        (intro || h1).insertAdjacentElement('afterend', glossarySearch(div));
       } else if (path === DEFAULT) {
         const h1 = div.querySelector('h1'); if (h1) { const p = h1.nextElementSibling; h1.remove(); if (p && p.tagName === 'P') p.remove(); }
         content.append(hero(), div);

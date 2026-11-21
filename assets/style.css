@@ -262,3 +262,14 @@ select.btn { padding-right: 10px; }
   .reg { gap: 4px; } .reg-bits { gap: 2px; padding: 4px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* glosario */
+.gsearch { position: sticky; top: var(--top); z-index: 4; background: var(--paper); padding: 10px 0 4px; margin-bottom: 6px; border-bottom: 1px solid var(--rule); }
+.gsearch label { display: block; font: 600 .9rem/1.2 var(--cond); margin-bottom: 6px; }
+.gsearch input {
+  width: 100%; max-width: 520px; padding: 10px 12px; border: 1px solid var(--rule); border-radius: var(--r-ctl);
+  background: var(--sheet); color: var(--ink); font: 400 1rem/1.3 var(--sans);
+}
+.gsearch input:focus { outline: 2px solid var(--signal); outline-offset: 1px; border-color: var(--signal); }
+.gsearch p { margin: 6px 0 0; font-size: .85rem; }
+.content ul li[hidden], .content h2[hidden], .content ul[hidden] { display: none; }

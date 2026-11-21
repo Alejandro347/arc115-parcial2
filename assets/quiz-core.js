@@ -58,6 +58,12 @@
     return { correct, total, grade, details };
   }
 
+  function fold(t) { return String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
+  function matchesQuery(text, query) {
+    const q = fold(query).trim();
+    return !q || fold(text).includes(q);
+  }
+
   function countBlank(answers, n) {
     let k = 0;
     for (let i = 0; i < n; i++) if (answers[i] === undefined || answers[i] === null) k++;
@@ -81,5 +87,5 @@
     return { stop() { if (!done) { done = true; c.clearInterval(id); } } };
   }
 
-  return { countBlank, parseOptions, shuffle, shuffleOptions, buildExam, gradeExam, formatTime, createCountdown };
+  return { matchesQuery, countBlank, parseOptions, shuffle, shuffleOptions, buildExam, gradeExam, formatTime, createCountdown };
 });
