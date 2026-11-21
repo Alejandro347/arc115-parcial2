@@ -1,6 +1,6 @@
 # Preguntas de parciales anteriores
 
-**Fuentes:** Parcial 2a 2019, Parcial 2b 2019, Parcial II 2020 (12/12/2020), Parcial II 2022 (14/11/2022, + EP2-2022), Parcial II 2025 (dos versiones: fotos `2025.jpeg` y `repetido 2025.jpg.jpeg`).
+**Fuentes:** Parcial 2a 2019, Parcial 2b 2019, Parcial II 2020 (12/12/2020), Parcial II 2022 (14/11/2022, + EP2-2022), Parcial II «2025» en dos versiones (fotos `2025.jpeg` y `repetido 2025.jpg.jpeg`). La versión de `2025.jpeg` podría ser del **2024**: sus preguntas están marcadas aquí como «2025», y su simulacro específico está en [Simulacro tipo 2024](Simulacro_2024.md).
 
 **Cómo usarlo:** lee la pregunta, responde en voz alta o en papel y luego despliega la respuesta.
 - 🔁 = la pregunta salió en **más de un parcial** (prioridad alta).
